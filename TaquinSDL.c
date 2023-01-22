@@ -46,7 +46,6 @@ SDL_Surface** AttributionImage(int dim){
 	int numImageMax = (dim * dim) - 1; //Car 0 compte
 	int i;
 	for(i=0; i<=numImageMax; i++){
-		char *b =malloc(sizeof(char) * 2);
 		int c = i/10;
 		sprintf(s,"%s%d%d.bmp", racine, c, i%10);
 		//Récupértion de l'image XX.bmp
@@ -320,6 +319,9 @@ void PauseSDL2Image(SDL_Surface *ecran, SDL_Surface *Image, SDL_Rect *decoupe, P
 					
 					case SDLK_ESCAPE:
 						arret = 1;
+						break;
+					
+					default:
 						break;
 				}//fin du 2eme switch
 				break;//Fin KEYDOWN
